@@ -30,19 +30,19 @@
             Obesidade grau 2<br />
             Obesidade grau 3<br />
         </div>
-        <h1>Calcule seu IMC</h1>
-        <form action="/" id="form" method="post">
 
-            <label for="peso">Peso:</label>
-            <input type="text" id="peso">
+        <h1>Calcule seu IMC</h>
+            <form action="/" id="form" method="POST">
+                <label for="peso">Peso:</label>
+                <input type="text" id="peso" name="peso">
 
-            <label for="altura">Altura:</label>
-            <input type="text" id="altura">
+                <label for="altura">Altura:</label>
+                <input type="text" id="altura" name="altura">
 
-            <button type="submit">Enviar</button>
-        </form>
+                <button type="submit">Enviar</button>
+            </form>
 
-        <div id="result"></div>
+            <div id="result"></div>
     </section>
     <script src="./assets/js/main.js"></script>
 </body>

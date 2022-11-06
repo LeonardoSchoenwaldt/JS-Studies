@@ -71,5 +71,15 @@ form button:active {
 
 div {
     display: inline-block;
-    
+}
+
+.text-result,
+.bad {
+    background: rgba(20, 200, 25, 0.800);
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.bad {
+    background: rgba(218, 7, 7, 0.800);
 }
