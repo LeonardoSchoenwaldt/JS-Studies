@@ -1,75 +1,79 @@
 const h1 = document.querySelector('.container h1');
 const date = new Date();
 
-function getDayWeekText(dayWeek) {
+function getDayWeekText() {
+    const dayWeek = date.getDay();
     let dayWeekText
 
     switch (dayWeek) {
         case 0:
             dayWeekText = 'Domingo';
-            return dayWeekText;
+            break;
         case 1:
             dayWeekText = 'Segunda-feira';
-            return dayWeekText;
+            break;
         case 2:
             dayWeekText = 'Terça-feira';
-            return dayWeekText;
+            break;
         case 3:
             dayWeekText = 'Quarta-feira';
-            return dayWeekText;
+            break;
         case 4:
             dayWeekText = 'Quinta-feira';
-            return dayWeekText;
+            break;
         case 5:
             dayWeekText = 'Sexta-feira';
-            return dayWeekText;
+            break;
         case 6:
             dayWeekText = 'Sábado.';
-            return dayWeekText;
+            break;
     }
+    return dayWeekText;
 }
 
-function getMonthText(month) {
+function getMonthText() {
+    const month = date.getMonth();
     let monthtext
 
     switch (month) {
         case 0:
             monthtext = "Janeiro";
-            return monthtext;
+            break;
         case 1:
             monthtext = "Fevereiro";
-            return monthtext;
+            break;
         case 2:
             monthtext = "Março";
-            return monthtext;
+            break;
         case 3:
             monthtext = "Abril";
-            return monthtext;
+            break;
         case 4:
             monthtext = "Maio";
-            return monthtext;
+            break;
         case 5:
             monthtext = "Junho";
-            return monthtext;
+            break;
         case 6:
             monthtext = "Julho";
-            return monthtext;
+            break;
         case 7:
             monthtext = "Agosto";
-            return monthtext;
+            break;
         case 8:
             monthtext = "Setembro";
-            return monthtext;
+            break;
         case 9:
             monthtext = "Outubro";
-            return monthtext;
+            break;
         case 10:
             monthtext = "Novembro";
-            return monthtext;
+            break;
         case 11:
             monthtext = "Dezembro";
-            return monthtext;
+            break;
     }
+    return monthtext;
 }
 
 function leftZero(num) {
@@ -77,13 +81,17 @@ function leftZero(num) {
 }
 
 function createDate(date) {
-    const dayWeek = date.getDay();
-    const month = date.getMonth();
-    const monthtext = getMonthText(month);
-    const dayWeekText = getDayWeekText(dayWeek);
+    const monthtext = getMonthText();
+    const dayWeekText = getDayWeekText();
 
     return `${dayWeekText}, ${date.getDate()} de ${monthtext} de ${date.getFullYear()} 
     ${leftZero(date.getHours())}:${leftZero(date.getMinutes())}:${leftZero(date.getSeconds())}`
 }
 
 h1.innerHTML = createDate(date);
+
+/*
+const h1 = document.querySelector('.container h1');
+const date = new Date();
+h1.innerHTML = date.toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short'});
+*/
